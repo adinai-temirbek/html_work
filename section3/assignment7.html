@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive SVG Graphic</title>
+  <style>
+    body{display:flex;justify-content:center;align-items:center;height:100vh;background:#f0f4f8;margin:0;font-family:Arial,sans-serif}
+    svg{width:300px;height:300px;cursor:pointer}
+  </style>
+</head>
+<body>
+
+  <svg id="mySVG" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="#2563eb" />
+    <rect x="10" y="10" width="20" height="20" fill="#f59e0b" />
+    <rect x="70" y="10" width="20" height="20" fill="#10b981" />
+  </svg>
+
+  <script>
+    const svg = document.getElementById('mySVG');
+    const shapes = svg.querySelectorAll('circle, rect');
+
+    shapes.forEach(shape => {
+      shape.addEventListener('mouseenter', ()=>{
+        shape.dataset.original = shape.getAttribute('fill');
+        shape.setAttribute('fill', '#ef4444'); // change color on hover
+      });
+      shape.addEventListener('mouseleave', ()=>{
+        shape.setAttribute('fill', shape.dataset.original); // revert color
+      });
+    });
+  </script>
+
+  <footer>
+      <span class="student-badge">Student: Adinai Temirbekova</span>
+  </footer>
+
+</body>
+</html>

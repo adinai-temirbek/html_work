@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Video Player</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+    .video-container{background:#000;padding:10px;border-radius:10px;max-width:640px;width:100%;display:flex;flex-direction:column;align-items:center}
+    video{width:100%;border-radius:8px}
+    .controls{margin-top:10px;width:100%;display:flex;justify-content:space-between;align-items:center}
+    button,input[type=range]{cursor:pointer}
+    button{padding:6px 12px;border:none;border-radius:6px;background:#2563eb;color:#fff}
+    input[type=range]{width:100px}
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <video id="myVideo" src="https://www.w3schools.com/html/mov_bbb.mp4" preload="metadata"></video>
+    <div class="controls">
+      <button id="playPauseBtn">Play</button>
+      <label>Volume: <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1"></label>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('myVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    // Play/Pause toggle
+    playPauseBtn.addEventListener('click', ()=>{
+      if(video.paused){
+        video.play();
+        playPauseBtn.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseBtn.textContent = 'Play';
+      }
+    });
+
+    // Volume control
+    volumeSlider.addEventListener('input', ()=>{
+      video.volume = volumeSlider.value;
+    });
+
+    // Optional: update button text when video ends
+    video.addEventListener('ended', ()=>{
+      playPauseBtn.textContent = 'Play';
+    });
+  </script>
+
+  <footer>
+      <span class="student-badge">Student: Adinai Temirbekova</span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    background: #101820;
+    color: #f6f8fa;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+header {
+    padding: 32px 0 10px 0;
+    text-align: left;
+    margin-left: 24px;
+}
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.summary {
+    font-size: 1em;
+    color: #b2becd;
+    margin-bottom: 24px;
+}
+.section {
+    background: #181f2a;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin: 0 18px 32px 18px;
+    padding: 18px 18px 24px 18px;
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #4f8cff;
+}
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+.assignment-link {
+    display: block;
+    background: #232b3a;
+    color: #f6f8fa;
+    text-decoration: none;
+    padding: 16px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1em;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px rgba(79,140,255,0.04);
+    border: 1px solid transparent;
+}
+.assignment-link:hover {
+    background: #4f8cff;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+footer {
+    margin-top: 40px;
+    padding: 18px 0;
+    text-align: left;
+    background: none;
+}
+.student-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #4f8cff 0%, #1fd1f9 100%);
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 1em;
+    margin-left: 18px;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+}
+@media (max-width: 800px) {
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section {
+        margin: 0 6px 24px 6px;
+        padding: 12px 8px 18px 8px;
+    }
+}
+@media (max-width: 500px) {
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}

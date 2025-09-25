@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple PWA</title>
+  <link rel="manifest" href="assignment15.json">
+  <style>
+    body{font-family:Arial,sans-serif;text-align:center;margin-top:50px;background:#f0f4f8}
+    h1{color:#2563eb}
+  </style>
+</head>
+<body>
+  <h1>My Simple PWA</h1>
+  <p>This app works offline!</p>
+
+  <script>
+    // Register Service Worker
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker Registered', reg))
+      .catch(err => console.error('Service Worker Failed', err));
+    }
+  </script>
+  <footer>
+      <span class="student-badge">Student: Adinai Temirbekova</span>
+  </footer>
+</body>
+</html>
