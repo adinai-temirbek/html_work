@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multilingual Website</title>
+  <style>
+    body{font-family:Arial,sans-serif;text-align:center;margin-top:50px;background:#f0f4f8}
+    button{padding:10px 20px;margin:5px;border:none;border-radius:6px;background:#2563eb;color:white;cursor:pointer}
+    h1,p{color:#111}
+  </style>
+</head>
+<body>
+
+  <div>
+    <button data-lang="ky">Кыргызча</button>
+    <button data-lang="ru">Русский</button>
+    <button data-lang="en">English</button>
+  </div>
+
+  <h1 id="title">Welcome to our website</h1>
+  <p id="description">This is a simple multilingual page.</p>
+
+  <script>
+    const translations = {
+      en: {title:'Welcome to our website', description:'This is a simple multilingual page.'},
+      ky: {title:'Биздин веб-сайтка кош келиңиз', description:'Бул жөнөкөй көп тилдүү баракча.'},
+      ru: {title:'Добро пожаловать на наш сайт', description:'Это простая многоязычная страница.'}
+    };
+
+    const titleEl = document.getElementById('title');
+    const descEl = document.getElementById('description');
+    const buttons = document.querySelectorAll('button[data-lang]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        document.documentElement.lang = lang;
+        titleEl.textContent = translations[lang].title;
+        descEl.textContent = translations[lang].description;
+      });
+    });
+  </script>
+
+  <footer>
+      <span class="student-badge">Student: Adinai Temirbekova</span>
+  </footer>
+
+</body>
+</html>

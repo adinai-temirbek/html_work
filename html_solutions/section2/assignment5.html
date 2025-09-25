@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        figure {
+            margin: 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            padding: 8px;
+            background: #f2f2f2;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Image Gallery</h1>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <figure>
+                <img src="C:\web and tech\chill\html_intermediate\images\image1.jpg" alt="Image 1">
+                <figcaption>Programmers aesthetic </figcaption>
+            </figure>
+            <figure>
+                <img src="C:\web and tech\chill\html_intermediate\images\image2.jpg" alt="Image 2">
+                <figcaption>Citations</figcaption>
+            </figure>
+            <figure>
+                <img src="C:\web and tech\chill\html_intermediate\images\image3.jpg" alt="Image 3">
+                <figcaption>Girls in STEM</figcaption>
+            </figure>
+            <figure>
+                <img src="C:\web and tech\chill\html_intermediate\images\image4.jpg" alt="Image 4">
+                <figcaption>Girls in STEM</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <span class="student-badge">Student: Adinai Temirbekova</span>
+    </footer>
+</body>
+</html>

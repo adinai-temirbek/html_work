@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scrolling</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:0;background:#f0f4f8}
+    .container{max-width:600px;margin:0 auto;padding:20px}
+    .item{background:white;margin:10px 0;padding:20px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1)}
+    .loading{text-align:center;padding:20px;color:#2563eb;font-weight:bold}
+  </style>
+</head>
+<body>
+
+  <div class="container" id="container"></div>
+  <div class="loading" id="loading">Loading...</div>
+
+  <script>
+    const container = document.getElementById('container');
+    const loading = document.getElementById('loading');
+    let page = 1;
+    const limit = 10;
+
+    // Function to load items
+    function loadItems(){
+      loading.style.display = 'block';
+      setTimeout(() => {
+        for(let i=1; i<=limit; i++){
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.textContent = `Item ${((page-1)*limit)+i}`;
+          container.appendChild(item);
+        }
+        loading.style.display = 'none';
+        page++;
+      }, 500);
+    }
+
+    // Load initial items
+    loadItems();
+
+    // Infinite scroll
+    window.addEventListener('scroll', () => {
+      if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 10){
+        loadItems();
+      }
+    });
+  </script>
+
+  <footer>
+      <span class="student-badge">Student: Adinai Temirbekova</span>
+  </footer>
+
+</body>
+</html>
